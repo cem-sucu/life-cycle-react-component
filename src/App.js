@@ -1,11 +1,15 @@
+import React, { Component } from "react";
 import "./App.css";
+import LifeCycle from "./LifeCycle";
 
-function App() {
-    return (
-        <div className="App">
-          
-        </div>
-    );
+class App extends Component {
+    render() {
+        return (
+            <div className="App">
+                <LifeCycle />
+            </div>
+        );
+    }
 }
 
 export default App;
