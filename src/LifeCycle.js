@@ -33,10 +33,14 @@ export class LifeCycle extends Component {
         console.log(this.state);
     }
 
+    componentWillUnmount() {
+        console.log("je suis dans le componentWillUnmount()");
+    }
+
     render() {
         console.log(`Etape ${this.state.step} : je suis dans le render()`);
         return (
-            <div>
+            <div className="borderBox">
                 {console.log(
                     `Etape ${this.state.step} : je suis dans le DOM()`
                 )}
