@@ -16,6 +16,21 @@ export class LifeCycle extends Component {
         console.log(
             `Etape ${this.state.step} : je suis dans le componentDidMount()`
         );
+        this.setState({
+            name: this.props.name,
+            step: this.state.step + 1,
+        });
+        console.log(
+            `Etape ${this.state.step} : setState() à changé dans le componentDidMount()`
+        );
+    }
+
+    componentDidUpdate(prevProps, prevState) {
+        console.log(
+            `Etape ${this.state.step} : je suis dans le componentDidUpdate()`
+        );
+        console.log(prevState);
+        console.log(this.state);
     }
 
     render() {
@@ -27,7 +42,7 @@ export class LifeCycle extends Component {
                 )}
                 <p>Chargement : {this.state.step}</p>
                 <p>Name : {this.state.name}</p>
-                <ChildComponent/>
+                <ChildComponent />
             </div>
         );
     }
