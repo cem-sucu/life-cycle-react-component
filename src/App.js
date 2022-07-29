@@ -1,35 +1,19 @@
 import React, { Component } from "react";
-import Modal from "./Modal";
 import "./App.css";
+import MyRef from "./MyRef";
 
 class App extends Component {
+
     constructor(props) {
-        super(props);
-
-        this.state = {
-            showModal: false,
-        };
+      super(props)
+    
+        this.refComponent = React.createRef();
     }
-
-    handleShow = () => {
-        this.setState({
-            showModal: true,
-        });
-    };
-
-    handleHide = () => {
-        this.setState({
-            showModal: false,
-        });
-    };
-
     render() {
-        const modal = this.state.showModal && <Modal close={this.handleHide} />;
-
         return (
             <div className="App">
-                <button onClick={this.handleShow}>Afficher le Modal</button>
-                {modal}
+                <MyRef ref={this.refComponent}/>
+                <button onClick={handleClick}>Valider</button>
             </div>
         );
     }
