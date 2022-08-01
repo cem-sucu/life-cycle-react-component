@@ -10,13 +10,13 @@ class App extends Component {
     }
 
     handleClick = () => {
-        this.refComponent.current.addFocus();
+        this.refComponent.current.focus();
     };
 
     render() {
         return (
             <div className="App">
-                <MyRef ref={this.refComponent} />
+                <MyRef name="toto" ref={this.refComponent} />
                 <button onClick={this.handleClick}>Valider</button>
             </div>
         );

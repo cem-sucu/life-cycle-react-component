@@ -1,40 +1,14 @@
-import React, { Component } from "react";
+import React from "react";
 
-class MyRef extends Component {
-    constructor(props) {
-        super(props);
+const MyRef = React.forwardRef((props, ref) => {
+console.log(props);
+console.log(ref);
 
-        this.state = {
-            value: "",
-        };
-        this.myTitle = React.createRef();
-
-        this.myInput = React.createRef();
-    }
-
-
-
-   addFocus = () => {
-        this.myInput.current.focus();
-    }
-
- 
-
-    render() {
-        return (
-            <div>
-               {/*  <h1 ref={this.myTitle}>Valeur : {this.state.value} </h1> */}
-              {/*   <input
-                    ref={this.myInput}
-                    type="text"
-                    value={this.state.value}
-                    onChange={this.update}
-                /> */}
-                <input ref={this.myInput} type="text" />
-                
-            </div>
-        );
-    }
-}
+    return (
+        <div>
+            <input ref={ref} type="text" />
+        </div>
+    );
+});
 
 export default MyRef;
